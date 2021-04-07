@@ -22,3 +22,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('auth/facebook', [App\Http\Controllers\Auth\LoginController::class, 'facebook']);
 Route::get('auth/facebook/callback', [App\Http\Controllers\Auth\LoginController::class, 'facebook_callback']);
+Route::get('/kebijakan-privasi', function() {
+    echo "Halaman kebijakan privasi";
+});
+Route::get('/ketentuan-layanan', function() {
+    echo "Halaman kebijakan privasi";
+});
