@@ -28,3 +28,6 @@ Route::get('/kebijakan-privasi', function() {
 Route::get('/ketentuan-layanan', function() {
     echo "Halaman kebijakan privasi";
 });
+Route::get('/hapus-akun-facebook', function() {
+    echo "Halaman hapus akun facebook";
+});
