@@ -64,7 +64,7 @@
                                 @endif
                                 <div class="form-group row mt-5">
                                     <div class="col-md-12">
-                                        OR <a href="{{ url('/auth/facebook') }}" class="btn btn-primary"><i class="fa fa-facebook"></i> Login dengan Facebook</a>
+                                        OR <a href="{{ url('/auth/google') }}" class="btn btn-primary"><i class="fa fa-google"></i> Login dengan google</a>
                                     </div>
                                 </div>
                             </div>

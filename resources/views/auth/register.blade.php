@@ -66,7 +66,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
-                                OR <a href="{{ url('/auth/facebook') }}" class="btn btn-primary"><i class="fa fa-facebook"></i> Register dengan Facebook</a>
+                                OR <a href="{{ url('/auth/google') }}" class="btn btn-primary"><i class="fa fa-google"></i> Register dengan google</a>
                             </div>
                         </div>
                     </form>

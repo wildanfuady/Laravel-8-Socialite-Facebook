@@ -22,19 +22,19 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function facebook()
+    public function google()
     {
-        return Socialite::driver('facebook')->redirect();
+        return Socialite::driver('google')->redirect();
     }
 
-    public function facebook_callback()
+    public function google_callback()
     {
         try {
     
-            $user = Socialite::driver('facebook')->stateless()->user();
+            $user = Socialite::driver('google')->stateless()->user();
 
-            /// lakukan pengecekan apakah facebook id nya sudah ada apa belum
-            $isUser = User::where('facebook_id', $user->id)->first();
+            /// lakukan pengecekan apakah google id nya sudah ada apa belum
+            $isUser = User::where('google_id', $user->id)->first();
             
             /// jika sudah ada, langsung login
             if($isUser){
@@ -47,14 +47,14 @@ class LoginController extends Controller
                 $createUser = new User;
                 $createUser->name =  $user->getName();
 
-                /// mendapatkan email dari facebook
+                /// mendapatkan email dari google
                 if($user->getEmail() != null){
                     $createUser->email = $user->getEmail();
                     $createUser->email_verified_at = \Carbon\Carbon::now();
                 }  
                 
-                /// tambahkan facebook id
-                $createUser->facebook_id = $user->getId();
+                /// tambahkan google id
+                $createUser->google_id = $user->getId();
 
                 /// membuat random password
                 $rand = rand(111111,999999);
